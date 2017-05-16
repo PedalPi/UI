@@ -1,0 +1,30 @@
+#:import BlockLabel ui.api.block_label.BlockLabel
+
+<HomeScreen>:
+    FloatLayout:
+
+        AnchorLayout:
+            anchor_x: 'center'
+            anchor_y: 'center'
+
+            AsyncImage:
+                source: 'assets/images/icon.png'
+
+        AnchorLayout:
+            anchor_x: 'center'
+            anchor_y: 'bottom'
+
+            Label:
+                markup: True
+                text: 'Loading'
+                font_size: 35
+                size: self.texture_size
+                size_hint: (None, None)
+                color: (0, 0, 0, 1)
+
+                canvas.before:
+                    Color:
+                        rgba: .8, .8, .8, .5
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
