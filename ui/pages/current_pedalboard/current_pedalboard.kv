@@ -1,54 +1,34 @@
+#:import BlockLabel ui.api.block_label.BlockLabel
+
 <CurrentPedalboardScreen>:
-    FloatLayout:
+    BoxLayout:
+        orientation: 'vertical'
 
         AnchorLayout:
+            size_hint: 1, .3
             anchor_x: 'left'
             anchor_y: 'top'
 
-            Label:
-                markup: True
-                text: '01 | '
+            BlockLabel:
+                text: '01 | Pdl Name'.upper()
                 bold: True
-                font_size: 32
-                size: self.texture_size
-                size_hint: (None, None)
-                color: (0, 0, 0, 1)
 
-        AnchorLayout:
-            anchor_x: 'center'
-            anchor_y: 'top'
+                canvas.before:
+                    Color:
+                        rgba: .8, .8, .8, .5
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
 
-            Label:
-                markup: True
-                text: 'Pdl Name'.upper()
-                bold: True
-                font_size: 32
-                size: self.texture_size
-                size_hint: (None, None)
-                color: (0, 0, 0, 1)
 
-        AnchorLayout:
-            anchor_x: 'center'
-            anchor_y: 'center'
+        BlockLabel:
+            size_hint: 1, 1
+            font_name: 'assets/fonts/black_ops_one/BlackOpsOne-Regular.ttf'
+            markup: True
+            text: '03'
+            bold: True
 
-            Label:
-                font_name: 'assets/fonts/black_ops_one/BlackOpsOne-Regular.ttf'
-                markup: True
-                text: '3'
-                bold: True
-                font_size: 120
-                size: self.texture_size
-                size_hint: (None, None)
-                color: (0, 0, 0, 1)
-
-        AnchorLayout:
-            anchor_x: 'center'
-            anchor_y: 'bottom'
-
-            Label:
-                markup: True
-                text: 'Effect Name'
-                font_size: 35
-                size: self.texture_size
-                size_hint: (None, None)
-                color: (0, 0, 0, 1)
+        BlockLabel:
+            size_hint: 1, .3
+            markup: True
+            text: 'Effect Name'

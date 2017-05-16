@@ -8,6 +8,7 @@ class BlockLabel(Label):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.bind(width=self.on_texture_size)
+        self.bind(height=self.on_texture_size)
 
     def on_texture_size(self, *args):
         if self.texture_size[1] == 0:

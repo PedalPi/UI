@@ -1,3 +1,5 @@
+from kivy.lang import Builder
+
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, NoTransition
 from kivy.core.window import Window
@@ -7,7 +9,7 @@ from ui.pages.current_pedalboard.current_pedalboard import CurrentPedalboardScre
 from ui.pages.pedalboards.pedalboards import PedalboardsScreen
 
 from kivy.clock import Clock
-#Window.size = (320, 240)
+Window.size = (320, 240)
 Window.clearcolor = (236/255, 240/255, 241/255, 1)
 
 
@@ -20,6 +22,7 @@ class PedalPiDisplayApp(App):
         self.screen_manager = None
 
     def build(self):
+        Builder.load_file('app.kv')
         self.screen_manager = self._generate_screen_manager()
 
         def set_current(*args):
@@ -29,7 +32,7 @@ class PedalPiDisplayApp(App):
 
         #Clock.schedule_once(set_current, 2)
         #Clock.schedule_interval(set_current, .2)
-        #self.screen_manager.current = 'home'
+        self.screen_manager.current = 'pedalboards'
         return self.screen_manager
 
     def _generate_screen_manager(self):
