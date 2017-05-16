@@ -2,7 +2,7 @@ from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, NoTransition
 from kivy.core.window import Window
 
-from ui.pages.home.home import HomeScreen
+from ui.pages.splash.splash import SplashScreen
 from ui.pages.current_pedalboard.current_pedalboard import CurrentPedalboardScreen
 from ui.pages.pedalboards.pedalboards import PedalboardsScreen
 
@@ -28,7 +28,8 @@ class PedalPiDisplayApp(App):
             self.screen_manager.current = tela
 
         #Clock.schedule_once(set_current, 2)
-        Clock.schedule_interval(set_current, .2)
+        #Clock.schedule_interval(set_current, .2)
+        #self.screen_manager.current = 'home'
         return self.screen_manager
 
     def _generate_screen_manager(self):
@@ -41,7 +42,7 @@ class PedalPiDisplayApp(App):
 
     def _screens(self):
         return [
-            HomeScreen(name='home'),
+            SplashScreen(name='splash'),
             CurrentPedalboardScreen(name='current'),
             PedalboardsScreen(name='pedalboards')
         ]

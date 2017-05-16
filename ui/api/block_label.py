@@ -10,6 +10,9 @@ class BlockLabel(Label):
         self.bind(width=self.on_texture_size)
 
     def on_texture_size(self, *args):
+        if self.texture_size[1] == 0:
+            return
+
         if not self.factor:
             self.factor = [self.font_size / self.texture_size[0], self.font_size / self.texture_size[1]]
 

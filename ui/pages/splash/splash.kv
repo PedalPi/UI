@@ -1,0 +1,21 @@
+#:import BlockLabel ui.api.block_label.BlockLabel
+
+<SplashScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+
+        AsyncImage:
+            source: 'assets/images/icon.png'
+
+        BlockLabel:
+            text: 'Loading'
+            size_hint: 1, .2
+            markup: True
+            color: (0, 0, 0, 1)
+
+            canvas.before:
+                Color:
+                    rgba: .8, .8, .8, .5
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
