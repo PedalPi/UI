@@ -32,7 +32,7 @@ class PedalPiDisplayApp(App):
 
         #Clock.schedule_once(set_current, 2)
         #Clock.schedule_interval(set_current, .2)
-        self.screen_manager.current = 'pedalboards'
+        self.screen_manager.current = 'current'
         return self.screen_manager
 
     def _generate_screen_manager(self):
